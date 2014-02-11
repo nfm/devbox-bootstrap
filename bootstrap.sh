@@ -51,6 +51,8 @@ then
  	mkdir -p ~/.rbenv/plugins/ruby-build
   git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
   ~/.rbenv/bin/rbenv install 2.1.0
+  ~/.rbenv/bin/rbenv global 2.1.0
+  ~/.rbenv/shims/gem install bundler --pre
 fi
 
 # Set up Solarized colors for gnome-terminal
