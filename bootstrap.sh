@@ -35,7 +35,7 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox\
   postgresql-9.3 libpq-dev heroku-toolbelt redis-server gnome-shell htop memcached dropbox google-chrome-beta tmux libtcmalloc-minimal4\
-  password-gorilla
+  password-gorilla msttcorefonts
 
 # Configure postgresql
 sudo sh -c "echo 'local all all trust' > /etc/postgresql/9.3/main/pg_hba.conf"
