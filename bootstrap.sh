@@ -80,5 +80,7 @@ fi
 
 echo "Done. You'll need to:"
 echo "* Log out and back in to change your shell and desktop environment"
+echo "* Set DNS servers to 8.8.4.4 and 8.8.8.8"
 echo "* Manually copy in SSH keys and config"
+echo "* Manually copy in GPG keys"
 echo "* Manually copy in files for ~/.local/bin"
