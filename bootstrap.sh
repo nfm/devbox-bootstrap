@@ -63,6 +63,10 @@ fi
 git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git /tmp/gnome-terminal-colors-solarized
 cd /tmp/gnome-terminal-colors-solarized && ./solarize dark
 
+# Configure gnome-shell
+dconf write /org/gnome/shell/overrides/dynamic-workspaces false
+dconf write /org/gnome/desktop/wm/preferences/num-workspaces 4
+
 # Install vundle and vim plugins
 if [[ ! -e ~/.vim/bundle/vundle ]]
 then
