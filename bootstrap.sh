@@ -60,6 +60,14 @@ then
   ~/.rbenv/shims/gem install bundler --pre
 fi
 
+# Set up nvm, install node
+if [[ ! -e ~/.nvm ]]
+then
+  git clone https://github.com/creationix/nvm.git ~/.nvm
+  source ~/.nvm/nvm.sh
+  nvm install 0.11
+fi
+
 # Set up Solarized colors for gnome-terminal
 git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git /tmp/gnome-terminal-colors-solarized
 cd /tmp/gnome-terminal-colors-solarized && ./solarize dark
