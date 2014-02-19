@@ -33,10 +33,11 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
+NOKOGIRI="libxml2-dev libxslt1-dev"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox\
   postgresql-9.3 libpq-dev heroku-toolbelt redis-server gnome-shell htop memcached dropbox google-chrome-beta tmux libtcmalloc-minimal4\
-  password-gorilla msttcorefonts imagemagick ${THESILVERSEARCHER}
+  password-gorilla msttcorefonts imagemagick ${THESILVERSEARCHER} ${NOKOGIRI}
 
 # Configure postgresql
 sudo sh -c "echo 'local all all trust' > /etc/postgresql/9.3/main/pg_hba.conf"
