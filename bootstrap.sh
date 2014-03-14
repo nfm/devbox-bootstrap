@@ -5,7 +5,7 @@ LATEST_LTS_RELEASE="precise"
 
 # Add PPAs
 # - Firefox
-sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora &> /dev/null
+sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa &> /dev/null
 
 # - Chrome
 sudo sh -c "echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list"
