@@ -51,15 +51,11 @@ then
 	~/.dotfiles/bootstrap.sh
 fi
 
-# Set up rbenv and ruby-build, install ruby
-if [[ ! -e ~/.rbenv ]]
+# Install rubies using ruby-install
+if [[ ! -e ~/.rubies ]]
 then
-  git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
- 	mkdir -p ~/.rbenv/plugins/ruby-build
-  git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-  ~/.rbenv/bin/rbenv install 2.1.0
-  ~/.rbenv/bin/rbenv global 2.1.0
-  ~/.rbenv/shims/gem install bundler --pre
+  ~/.local/bin/ruby-install ruby 2.1.0
+  ~/.local/bin/chruby 2.1.0 && gem install bundler --pre
 fi
 
 # Set up nvm, install node
