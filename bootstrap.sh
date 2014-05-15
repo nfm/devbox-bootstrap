@@ -36,7 +36,7 @@ THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
 POSTGRESQL="postgresql-9.3 libpq-dev"
 sudo apt-get update -q=2
-sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox\
+sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server gnome-shell htop memcached dropbox google-chrome-beta tmux libtcmalloc-minimal4\
   password-gorilla msttcorefonts imagemagick colordiff ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL}
 
