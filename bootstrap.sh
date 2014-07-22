@@ -34,10 +34,10 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
-POSTGRESQL="postgresql-9.3 libpq-dev"
+POSTGRESQL="postgresql-9.3 postgresql-contrib-9.3 libpq-dev"
 sudo apt-get update -q=2
-sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox\
-  heroku-toolbelt redis-server gnome-shell htop memcached dropbox google-chrome-beta tmux libtcmalloc-minimal4\
+sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
+  heroku-toolbelt redis-server gnome-shell gnome-session htop memcached dropbox google-chrome-beta tmux libtcmalloc-minimal4\
   password-gorilla msttcorefonts imagemagick colordiff ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL}
 
 # Configure postgresql
@@ -54,8 +54,8 @@ fi
 # Install rubies using ruby-install
 if [[ ! -e ~/.rubies ]]
 then
-  ~/.local/bin/ruby-install ruby 2.1.0
-  ~/.local/bin/chruby 2.1.0 && gem install bundler --pre
+  ~/.local/bin/ruby-install ruby 2.1.2
+  ~/.local/bin/chruby 2.1.2 && gem install bundler --pre
 fi
 
 # Set up nvm, install node
@@ -94,4 +94,4 @@ echo "* Log out and back in to change your shell and desktop environment"
 echo "* Set DNS servers to 8.8.4.4 and 8.8.8.8"
 echo "* Manually copy in SSH keys and config"
 echo "* Manually copy in GPG keys"
-echo "* Manually copy in files for ~/.local/bin"
+echo "* Run dropbox to download and configure dropbox"
