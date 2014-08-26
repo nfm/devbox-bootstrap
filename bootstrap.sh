@@ -38,7 +38,7 @@ POSTGRESQL="postgresql-9.3 postgresql-contrib-9.3 libpq-dev"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server gnome-shell gnome-session htop memcached dropbox google-chrome-beta tmux libtcmalloc-minimal4\
-  password-gorilla msttcorefonts imagemagick colordiff lxc-docker ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL}
+  password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL}
 
 # Configure postgresql
 sudo sh -c "echo 'local all all trust' > /etc/postgresql/9.3/main/pg_hba.conf"
