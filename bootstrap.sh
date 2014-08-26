@@ -68,7 +68,7 @@ fi
 
 # Set up Solarized colors for gnome-terminal
 git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git /tmp/gnome-terminal-colors-solarized
-cd /tmp/gnome-terminal-colors-solarized && ./solarize dark
+cd /tmp/gnome-terminal-colors-solarized && ./set_dark.sh
 
 # Configure gnome-shell
 dconf write /org/gnome/shell/overrides/dynamic-workspaces false
