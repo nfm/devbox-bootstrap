@@ -55,8 +55,8 @@ fi
 # Install rubies using ruby-install
 if [[ ! -e ~/.rubies ]]
 then
-  ~/.local/bin/ruby-install ruby 2.1.2
-  ~/.local/bin/chruby 2.1.2 && gem install bundler --pre
+  ~/.local/bin/ruby-install ruby 2.1.4
+  ~/.local/bin/chruby 2.1.4 && gem install bundler --pre
 fi
 
 # Set up nvm, install node
