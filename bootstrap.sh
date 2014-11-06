@@ -56,7 +56,7 @@ fi
 if [[ ! -e ~/.rubies ]]
 then
   ~/.local/bin/ruby-install ruby 2.1.4
-  ~/.local/bin/chruby 2.1.4 && gem install bundler --pre
+  ~/.local/bin/chruby 2.1.4 && gem install bundler gem-ctags
 fi
 
 # Set up nvm, install node
