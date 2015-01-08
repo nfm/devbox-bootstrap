@@ -36,11 +36,12 @@ THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
 POSTGRESQL="postgresql-9.3 postgresql-contrib-9.3 libpq-dev"
 YOUCOMPLETEME="cmake python-dev"
+DEJA_DUP_S3_STORAGE="python-boto dconf-editor"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server gnome-shell gnome-session htop memcached dropbox google-chrome-beta tmux libjemalloc1\
   password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev exuberant-ctags\
-  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME}
+  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE}
 
 # Configure postgresql
 sudo sh -c "echo 'local all all trust' > /etc/postgresql/9.3/main/pg_hba.conf"
@@ -97,3 +98,4 @@ echo "* Set DNS servers to 8.8.4.4 and 8.8.8.8"
 echo "* Manually copy in SSH keys and config"
 echo "* Manually copy in GPG keys"
 echo "* Run dropbox to download and configure dropbox"
+echo "* Set up backups (http://blog.domenech.org/2013/01/backing-up-ubuntu-using-deja-dup-backup-and-aws-s3.html)"
