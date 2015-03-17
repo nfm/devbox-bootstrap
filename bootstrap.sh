@@ -31,17 +31,21 @@ wget --quiet -O - https://toolbelt.heroku.com/apt/release.key | sudo apt-key add
 sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ ${LATEST_LTS_RELEASE}-pgdg main' > /etc/apt/sources.list.d/postgresql.list"
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
+# - Neovim
+sudo add-apt-repository ppa:neovim-ppa/unstable
+
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
 POSTGRESQL="postgresql-9.3 postgresql-contrib-9.3 libpq-dev"
 YOUCOMPLETEME="cmake python-dev"
 DEJA_DUP_S3_STORAGE="python-boto dconf-editor"
+NEOVIM="neovim xclip"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server gnome-shell gnome-session htop memcached dropbox google-chrome-beta tmux libjemalloc1\
   password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev exuberant-ctags\
-  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE}
+  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM}
 
 # Configure postgresql
 sudo sh -c "echo 'local all all trust' > /etc/postgresql/9.3/main/pg_hba.conf"
