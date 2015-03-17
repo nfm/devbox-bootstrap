@@ -19,10 +19,6 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36A1D7869245C8950F
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E &> /dev/null
 sudo add-apt-repository "deb http://linux.dropbox.com/ubuntu ${RELEASE} main"
 
-# - HipChat
-sudo sh -c "echo 'deb http://downloads.hipchat.com/linux/apt stable main' > /etc/apt/sources.list.d/atlassian-hipchat.list"
-wget --quiet -O - https://www.hipchat.com/keys/hipchat-linux.key | sudo apt-key add -
-
 # - Heroku toolbelt
 sudo sh -c "echo 'deb http://toolbelt.heroku.com/ubuntu ./' > /etc/apt/sources.list.d/heroku.list"
 wget --quiet -O - https://toolbelt.heroku.com/apt/release.key | sudo apt-key add -
