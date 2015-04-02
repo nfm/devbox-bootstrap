@@ -66,7 +66,7 @@ if [[ ! -e ~/.nvm ]]
 then
   git clone https://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
-  nvm install 0.11
+  nvm install 0.12
 fi
 
 # Set up Solarized colors for gnome-terminal
