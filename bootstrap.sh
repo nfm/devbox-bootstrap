@@ -85,7 +85,7 @@ if [[ ! -e ~/.vim/bundle/vundle ]]
 then
 	mkdir -p ~/.vim/bundle
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	vim +BundleInstall +qall
+	vim +PluginInstall +qall
 fi
 
 # Use zsh
