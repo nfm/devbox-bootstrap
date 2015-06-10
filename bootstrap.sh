@@ -60,8 +60,8 @@ fi
 # Install rubies using ruby-install
 if [[ ! -e ~/.rubies ]]
 then
-  ~/.local/bin/ruby-install ruby 2.1.4
-  ~/.local/bin/chruby 2.1.4 && gem install bundler gem-ctags
+  ~/.local/bin/ruby-install ruby 2.2.2
+  ~/.local/bin/chruby 2.2.2 && gem install bundler gem-ctags
 fi
 
 # Set up nvm, install node
