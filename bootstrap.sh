@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 RELEASE=`lsb_release -sc`
-LATEST_LTS_RELEASE="precise"
+LATEST_LTS_RELEASE="trusty"
 
 # Add PPAs
 # - Firefox
