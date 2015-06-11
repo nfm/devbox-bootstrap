@@ -40,7 +40,7 @@ NEOVIM="neovim xclip python-dev python-pip python3-dev python3-pip"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server gnome-shell gnome-session htop memcached dropbox google-chrome-beta tmux libjemalloc1\
-  password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev exuberant-ctags\
+  password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev exuberant-ctags flashplugin-installer\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM}
 
 # Install neovim python package
