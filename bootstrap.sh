@@ -71,6 +71,7 @@ then
   git clone https://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
   nvm install 0.12
+  npm install -g bower
 fi
 
 # Set up Solarized colors for gnome-terminal
