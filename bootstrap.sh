@@ -48,6 +48,7 @@ pip install --user neovim
 
 # Configure postgresql
 sudo sh -c "echo 'local all all trust' > /etc/postgresql/9.3/main/pg_hba.conf"
+sudo -u postgres psql -c "CREATE ROLE `whoami` SUPERUSER LOGIN;"
 sudo service postgresql restart
 
 # Clone dotfiles, if necessary
