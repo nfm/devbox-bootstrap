@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 RELEASE=`lsb_release -sc`
-LATEST_LTS_RELEASE="precise"
+LATEST_LTS_RELEASE="trusty"
 
 # Add PPAs
 # - Firefox
@@ -35,12 +35,12 @@ THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
 POSTGRESQL="postgresql-9.3 postgresql-contrib-9.3 libpq-dev"
 YOUCOMPLETEME="cmake python-dev"
-DEJA_DUP_S3_STORAGE="python-boto dconf-editor"
+DEJA_DUP_S3_STORAGE="python-boto python-cloudfiles dconf-editor"
 NEOVIM="neovim xclip python-dev python-pip python3-dev python3-pip"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server gnome-shell gnome-session htop memcached dropbox google-chrome-beta tmux libjemalloc1\
-  password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev exuberant-ctags\
+  password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev exuberant-ctags flashplugin-installer\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM}
 
 # Install neovim python package
@@ -48,6 +48,7 @@ pip install --user neovim
 
 # Configure postgresql
 sudo sh -c "echo 'local all all trust' > /etc/postgresql/9.3/main/pg_hba.conf"
+sudo -u postgres psql -c "CREATE ROLE `whoami` SUPERUSER LOGIN;"
 sudo service postgresql restart
 
 # Clone dotfiles, if necessary
@@ -60,8 +61,8 @@ fi
 # Install rubies using ruby-install
 if [[ ! -e ~/.rubies ]]
 then
-  ~/.local/bin/ruby-install ruby 2.1.4
-  ~/.local/bin/chruby 2.1.4 && gem install bundler gem-ctags
+  ~/.local/bin/ruby-install ruby 2.2.2
+  ~/.local/bin/chruby-exec 2.2.2 -- gem install bundler gem-ctags
 fi
 
 # Set up nvm, install node
@@ -70,6 +71,7 @@ then
   git clone https://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
   nvm install 0.12
+  npm install -g bower
 fi
 
 # Set up Solarized colors for gnome-terminal
@@ -84,8 +86,8 @@ dconf write /org/gnome/desktop/wm/preferences/num-workspaces 4
 if [[ ! -e ~/.vim/bundle/vundle ]]
 then
 	mkdir -p ~/.vim/bundle
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	vim +BundleInstall +qall
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	vim +PluginInstall +qall
 fi
 
 # Use zsh
