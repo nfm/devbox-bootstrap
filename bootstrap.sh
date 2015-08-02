@@ -47,7 +47,7 @@ sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev l
 pip install --user neovim
 
 # Configure postgresql
-sudo sh -c "echo 'local all all trust' > /etc/postgresql/9.3/main/pg_hba.conf"
+sudo sh -c "echo 'local all all trust\nhost all all 127.0.0.1/32 trust' > /etc/postgresql/9.3/main/pg_hba.conf"
 sudo -u postgres psql -c "CREATE ROLE `whoami` SUPERUSER LOGIN;"
 sudo service postgresql restart
 
