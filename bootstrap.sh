@@ -40,7 +40,7 @@ NEOVIM="neovim xclip python-dev python-pip python3-dev python3-pip"
 PHOENIX="inotify-tools"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
-  heroku-toolbelt redis-server gnome-shell gnome-session htop memcached dropbox google-chrome-beta tmux libjemalloc1\
+  heroku-toolbelt redis-server htop memcached dropbox google-chrome-beta tmux libjemalloc1\
   password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev exuberant-ctags flashplugin-installer\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX}
 
@@ -78,10 +78,6 @@ fi
 # Set up Solarized colors for gnome-terminal
 git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git /tmp/gnome-terminal-colors-solarized
 cd /tmp/gnome-terminal-colors-solarized && ./set_dark.sh
-
-# Configure gnome-shell
-dconf write /org/gnome/shell/overrides/dynamic-workspaces false
-dconf write /org/gnome/desktop/wm/preferences/num-workspaces 4
 
 # Install vundle and vim plugins
 if [[ ! -e ~/.vim/bundle/vundle ]]
