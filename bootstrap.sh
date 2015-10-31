@@ -71,7 +71,7 @@ if [[ ! -e ~/.nvm ]]
 then
   git clone https://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
-  nvm install 0.12
+  nvm install 5.0.0
   npm install -g bower
 fi
 
