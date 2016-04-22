@@ -11,10 +11,6 @@ sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa &> /dev/null
 sudo sh -c "echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list"
 wget --quiet -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
-# - Docker
-sudo sh -c "echo 'deb https://get.docker.io/ubuntu docker main' > /etc/apt/sources.list.d/docker.list"
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9 &> /dev/null
-
 # - Dropbox
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E &> /dev/null
 sudo add-apt-repository "deb http://linux.dropbox.com/ubuntu ${RELEASE} main"
@@ -41,7 +37,7 @@ PHOENIX="inotify-tools"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached dropbox google-chrome-beta tmux libjemalloc1\
-  password-gorilla msttcorefonts imagemagick colordiff lxc-docker libsqlite3-dev exuberant-ctags flashplugin-installer\
+  password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags flashplugin-installer\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX}
 
 # Install neovim python package
