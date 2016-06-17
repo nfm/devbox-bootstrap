@@ -26,6 +26,9 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 # - Neovim
 sudo add-apt-repository ppa:neovim-ppa/unstable
 
+# - Git
+sudo add-apt-repository ppa:git-core/ppa
+
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
