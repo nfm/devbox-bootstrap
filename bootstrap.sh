@@ -51,6 +51,9 @@ sudo sh -c "echo 'local all all trust\nhost all all 127.0.0.1/32 trust' > /etc/p
 sudo -u postgres psql -c "CREATE ROLE `whoami` SUPERUSER LOGIN;"
 sudo service postgresql restart
 
+# Configure deja-dup backup location
+gsettings set org.gnome.DejaDup.S3 bucket 'nfm-backups'
+
 # Clone dotfiles, if necessary
 if [[ ! -e ~/.dotfiles ]]
 then
