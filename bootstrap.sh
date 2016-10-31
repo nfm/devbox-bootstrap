@@ -29,6 +29,10 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 # - Git
 sudo add-apt-repository ppa:git-core/ppa
 
+# - Yarn
+sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
+echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
