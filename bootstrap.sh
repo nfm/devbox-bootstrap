@@ -69,7 +69,7 @@ fi
 if [[ ! -e ~/.rubies ]]
 then
   ~/.local/bin/ruby-install ruby 2.3.0
-  ~/.local/bin/chruby-exec 2.3.0 -- gem install bundler gem-ctags
+  ~/.local/bin/chruby-exec 2.3.0 -- gem install bundler gem-ripper-tags
 fi
 
 # Set up nvm, install node
