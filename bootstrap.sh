@@ -108,7 +108,6 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 
 echo "Done. You'll need to:"
 echo "* Log out and back in to change your shell and desktop environment"
-echo "* Set DNS servers to 8.8.4.4 and 8.8.8.8"
 echo "* Manually copy in SSH keys and config"
 echo "* Manually copy in GPG keys"
 echo "* Set up backups (http://blog.domenech.org/2013/01/backing-up-ubuntu-using-deja-dup-backup-and-aws-s3.html) (ignore downloads, tmp, .rubies, .gem, .berkshelf, .cache, .npm, .nvm, .vim/bundle, .heroku, possibly others!)"
