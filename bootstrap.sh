@@ -14,10 +14,6 @@ sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa &> /dev/null
 sudo sh -c "echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list"
 wget --quiet -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
-# - Dropbox
-sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E &> /dev/null
-sudo add-apt-repository "deb http://linux.dropbox.com/ubuntu ${RELEASE} main"
-
 # - Heroku toolbelt
 sudo sh -c "echo 'deb http://toolbelt.heroku.com/ubuntu ./' > /etc/apt/sources.list.d/heroku.list"
 wget --quiet -O - https://toolbelt.heroku.com/apt/release.key | sudo apt-key add -
@@ -46,7 +42,7 @@ NEOVIM="neovim xclip python-dev python-pip python3-dev python3-pip"
 PHOENIX="inotify-tools"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
-  heroku-toolbelt redis-server htop memcached dropbox google-chrome-beta tmux libjemalloc1\
+  heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc1\
   password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags flashplugin-installer\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX}
 
@@ -115,7 +111,6 @@ echo "* Log out and back in to change your shell and desktop environment"
 echo "* Set DNS servers to 8.8.4.4 and 8.8.8.8"
 echo "* Manually copy in SSH keys and config"
 echo "* Manually copy in GPG keys"
-echo "* Run dropbox to download and configure dropbox"
-echo "* Set up backups (http://blog.domenech.org/2013/01/backing-up-ubuntu-using-deja-dup-backup-and-aws-s3.html) (ignore Dropbox, downloads, tmp, .rubies, .gem, .berkshelf, .cache, .dropbox, .dropbox-dist, .npm, .nvm, .vim/bundle, .heroku, possibly others!)"
+echo "* Set up backups (http://blog.domenech.org/2013/01/backing-up-ubuntu-using-deja-dup-backup-and-aws-s3.html) (ignore downloads, tmp, .rubies, .gem, .berkshelf, .cache, .npm, .nvm, .vim/bundle, .heroku, possibly others!)"
 echo "* Install watchman (http://choorucode.com/2015/02/10/how-to-install-and-use-watchman/)"
 echo "* Configure compiz config settings to change the Ubuntu Unity plugin edge stop velocity to not block the mouse from moving between monitors when trying to reveal the launcher with the mouse"
