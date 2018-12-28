@@ -2,6 +2,7 @@
 
 RELEASE=`lsb_release -sc`
 LATEST_LTS_RELEASE="bionic"
+POSTGRES_VERSION="9.6"
 
 # Add PPAs
 # - Firefox
@@ -36,7 +37,7 @@ echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
-POSTGRESQL="postgresql-9.3 postgresql-contrib-9.3 libpq-dev"
+POSTGRESQL="postgresql-${POSTGRES_VERSION} postgresql-contrib-${POSTGRES_VERSION} libpq-dev"
 YOUCOMPLETEME="cmake python-dev"
 DEJA_DUP_S3_STORAGE="python-boto python-cloudfiles dconf-editor"
 NEOVIM="neovim xclip python-dev python-pip python3-dev python3-pip"
@@ -51,7 +52,7 @@ sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev l
 pip install --user neovim
 
 # Configure postgresql
-sudo sh -c "echo 'local all all trust\nhost all all 127.0.0.1/32 trust' > /etc/postgresql/9.3/main/pg_hba.conf"
+sudo sh -c "echo 'local all all trust\nhost all all 127.0.0.1/32 trust' > /etc/postgresql/${POSTGRES_VERSION}/main/pg_hba.conf"
 sudo -u postgres psql -c "CREATE ROLE `whoami` SUPERUSER LOGIN;"
 sudo service postgresql restart
 
