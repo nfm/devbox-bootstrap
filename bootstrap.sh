@@ -4,6 +4,7 @@ RELEASE=`lsb_release -sc`
 LATEST_LTS_RELEASE="bionic"
 POSTGRES_VERSION="9.6"
 RUBY_VERSION="2.5.3"
+NODE_VERSION="11.6.0"
 
 # Add PPAs
 # - Firefox
@@ -79,7 +80,7 @@ if [[ ! -e ~/.nvm ]]
 then
   git clone https://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
-  nvm install 5.11.0
+  nvm install ${NODE_VERSION}
   npm install -g diff-so-fancy
 fi
 
