@@ -3,6 +3,7 @@
 RELEASE=`lsb_release -sc`
 LATEST_LTS_RELEASE="bionic"
 POSTGRES_VERSION="9.6"
+RUBY_VERSION="2.5.3"
 
 # Add PPAs
 # - Firefox
@@ -69,8 +70,8 @@ fi
 # Install rubies using ruby-install
 if [[ ! -e ~/.rubies ]]
 then
-  ~/.local/bin/ruby-install ruby 2.3.0
-  ~/.local/bin/chruby-exec 2.3.0 -- gem install bundler gem-ripper-tags gem-browse
+  ~/.local/bin/ruby-install ruby ${RUBY_VERSION} 
+  ~/.local/bin/chruby-exec ${RUBY_VERSION} -- gem install bundler gem-ripper-tags gem-browse
 fi
 
 # Set up nvm, install node
