@@ -37,6 +37,11 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
+# - Insync
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
+echo "deb http://apt.insynchq.com/ubuntu ${RELEASE} non-free contrib" | sudo tee /etc/apt/sources.list.d/insync.list
+
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
@@ -49,7 +54,7 @@ VSCODE="apt-transport-https"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc1\
-  password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags flashplugin-installer code\
+  password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags flashplugin-installer code insync\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE}
 
 # Install neovim python package
