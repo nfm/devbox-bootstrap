@@ -32,6 +32,11 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
 echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
+# - VScode
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
@@ -40,11 +45,12 @@ YOUCOMPLETEME="cmake python-dev"
 DEJA_DUP_S3_STORAGE="python-boto python-cloudfiles dconf-editor"
 NEOVIM="neovim xclip python-dev python-pip python3-dev python3-pip"
 PHOENIX="inotify-tools"
+VSCODE="apt-transport-https"
 sudo apt-get update -q=2
 sudo apt-get install -q=2 -y --force-yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc1\
-  password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags flashplugin-installer\
-  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX}
+  password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags flashplugin-installer code\
+  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE}
 
 # Install neovim python package
 pip install --user neovim
