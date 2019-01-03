@@ -46,8 +46,8 @@ add_apt_repository ppa:neovim-ppa/unstable
 add_apt_repository ppa:git-core/ppa
 
 # - Yarn
-sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
-echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 # - VScode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
