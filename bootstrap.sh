@@ -17,6 +17,8 @@ then
   exit 1
 fi
 
+sudo apt update && sudo apt install -y wget curl apt-transport-https ca-certificates software-properties-common
+
 # Add PPAs
 # - Firefox
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa &> /dev/null
