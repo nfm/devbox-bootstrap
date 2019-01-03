@@ -59,6 +59,11 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
 echo "deb http://apt.insynchq.com/ubuntu ${RELEASE} non-free contrib" | sudo tee /etc/apt/sources.list.d/insync.list
 
+# - Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# At the time of writing, docker for cosmic was unavailable, see https://github.com/docker/for-linux/issues/442
+sudo sh -c "echo 'deb [arch=amd64] https://download.docker.com/linux/ubuntu ${LATEST_LTS_RELEASE} stable' > /etc/apt/sources.list.d/docker.list"
+
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
@@ -71,8 +76,11 @@ VSCODE="apt-transport-https"
 sudo apt update --quiet
 sudo apt install --quiet --yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2\
-  password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags code insync\
+  password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags code insync docker-ce\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE}
+
+# Install docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 # Install neovim python package
 pip install --user neovim
