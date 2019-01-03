@@ -9,6 +9,14 @@ POSTGRES_VERSION="9.6"
 RUBY_VERSION="2.5.3"
 NODE_VERSION="11.6.0"
 
+# Don't run this script as root, doing so will result in files being owned by
+# root that shouldn't be. We call out to sudo where necessary.
+if [[ `whoami` = 'root' ]]
+then
+  echo "Don't run this script as root"
+  exit 1
+fi
+
 # Add PPAs
 # - Firefox
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa &> /dev/null
