@@ -65,7 +65,7 @@ pip install --user neovim
 
 # Configure postgresql
 sudo sh -c "echo 'local all all trust\nhost all all 127.0.0.1/32 trust' > /etc/postgresql/${POSTGRES_VERSION}/main/pg_hba.conf"
-sudo -u postgres psql -c "CREATE ROLE `whoami` SUPERUSER LOGIN;"
+sudo -u postgres psql -c "DROP ROLE IF EXISTS `whoami`; CREATE ROLE `whoami` SUPERUSER LOGIN;"
 sudo service postgresql restart
 
 # Configure deja-dup backup location
