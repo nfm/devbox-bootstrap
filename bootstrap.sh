@@ -127,10 +127,6 @@ then
 	chsh --shell ${ZSH}
 fi
 
-# Enable and configure workspaces
-gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 1
-gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 4
-
 # Disable crazy default Mac behaviour of touchpad so that right-click behaves traditionally
 # See https://wayland.freedesktop.org/libinput/doc/1.11.3/clickpad_softbuttons.html for details
 gsettings set org.gnome.desktop.peripherals.touchpad click-method areas
