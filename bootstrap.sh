@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -x
+set -e
+
 RELEASE=`lsb_release -sc`
 LATEST_LTS_RELEASE="bionic"
 POSTGRES_VERSION="9.6"
