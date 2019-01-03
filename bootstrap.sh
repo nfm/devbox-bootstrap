@@ -9,6 +9,10 @@ POSTGRES_VERSION="9.6"
 RUBY_VERSION="2.5.3"
 NODE_VERSION="11.6.0"
 
+function add_apt_repository {
+  sudo add-apt-repository --yes --no-update $1 &> /dev/null
+}
+
 # Don't run this script as root, doing so will result in files being owned by
 # root that shouldn't be. We call out to sudo where necessary.
 if [[ `whoami` = 'root' ]]
@@ -21,7 +25,7 @@ sudo apt update && sudo apt install -y wget curl apt-transport-https ca-certific
 
 # Add PPAs
 # - Firefox
-sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa &> /dev/null
+add_apt_repository ppa:ubuntu-mozilla-daily/ppa
 
 # - Chrome
 sudo sh -c "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome-beta.list"
@@ -36,10 +40,10 @@ sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ ${LATEST_LTS_RELE
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
 # - Neovim
-sudo add-apt-repository ppa:neovim-ppa/unstable
+add_apt_repository ppa:neovim-ppa/unstable
 
 # - Git
-sudo add-apt-repository ppa:git-core/ppa
+add_apt_repository ppa:git-core/ppa
 
 # - Yarn
 sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
