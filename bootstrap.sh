@@ -70,7 +70,7 @@ PHOENIX="inotify-tools"
 VSCODE="apt-transport-https"
 sudo apt update --quiet
 sudo apt install --quiet --yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
-  heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc1\
+  heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2\
   password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags flashplugin-installer code insync\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE}
 
