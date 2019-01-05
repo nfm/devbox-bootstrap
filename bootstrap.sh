@@ -124,10 +124,11 @@ git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git /tmp/gno
 cd /tmp/gnome-terminal-colors-solarized && ./set_dark.sh
 
 # Install vundle and vim plugins
-if [[ ! -e ~/.vim/bundle/vundle ]]
+VUNDLE_DIR="~/.vim/bundle/Vundle.vim"
+if [[ ! -e ${VUNDLE_DIR} ]]
 then
 	mkdir -p ~/.vim/bundle
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	git clone https://github.com/gmarik/Vundle.vim.git ${VUNDLE_DIR}
 	vim +PluginInstall +qall
 fi
 
