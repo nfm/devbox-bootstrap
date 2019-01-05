@@ -116,7 +116,6 @@ then
   git clone https://github.com/creationix/nvm.git ~/.nvm
   source ~/.nvm/nvm.sh
   nvm install ${NODE_VERSION}
-  npm install -g diff-so-fancy
 fi
 
 # Set up Solarized colors for gnome-terminal
