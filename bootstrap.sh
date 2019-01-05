@@ -143,6 +143,9 @@ fi
 # See https://wayland.freedesktop.org/libinput/doc/1.11.3/clickpad_softbuttons.html for details
 gsettings set org.gnome.desktop.peripherals.touchpad click-method areas
 
+# Autohide the dock when there are fullscreen windows
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+
 # Increase the number of available inotify watchers
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
