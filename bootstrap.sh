@@ -68,7 +68,6 @@ sudo sh -c "echo 'deb [arch=amd64] https://download.docker.com/linux/ubuntu ${LA
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
 POSTGRESQL="postgresql-${POSTGRES_VERSION} postgresql-contrib-${POSTGRES_VERSION} libpq-dev"
-YOUCOMPLETEME="cmake python-dev"
 DEJA_DUP_S3_STORAGE="python-boto python-cloudfiles dconf-editor"
 NEOVIM="neovim xclip python-dev python-pip python3-dev python3-pip"
 PHOENIX="inotify-tools"
@@ -77,7 +76,7 @@ sudo apt update --quiet
 sudo apt install --quiet --yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2\
   password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags code insync docker-ce yarn vlc\
-  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${YOUCOMPLETEME} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE}
+  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE}
 
 # Install docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
