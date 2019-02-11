@@ -72,11 +72,12 @@ DEJA_DUP_S3_STORAGE="python-boto python-cloudfiles dconf-editor"
 NEOVIM="neovim xclip python-dev python-pip python3-dev python3-pip"
 PHOENIX="inotify-tools"
 VSCODE="apt-transport-https"
+PIA_VPN="network-manager-openvpn-gnome"
 sudo apt update --quiet
 sudo apt install --quiet --yes build-essential zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2 diodon\
   password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags code insync docker-ce yarn vlc\
-  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE}
+  ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE} ${PIA_VPN}
 
 # Install docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -151,6 +152,11 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 
 # Increase the number of available inotify watchers
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+# Install PIA VPN
+# Main client doesn't seem to work with Ubuntu 18.10, just use the network manager version
+wget https://www.privateinternetaccess.com/installer/pia-nm.sh
+sudo bash pia-nm.sh
 
 echo "Done. You'll need to:"
 echo "* Log out and back in to change your shell and desktop environment"
