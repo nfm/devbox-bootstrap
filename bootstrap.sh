@@ -158,6 +158,27 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 sudo bash pia-nm.sh
 
+# Install vscode extensions
+# These don't get defined in a config file anywhere unfortunately
+VSCODE_EXTENSIONS=(
+castwide.solargraph
+eamodio.gitlens
+editorconfig.editorconfig
+eg2.tslint
+esbenp.prettier-vscode
+karunamurti.haml
+ms-vsliveshare.vsliveshare
+patbenatar.advanced-new-file
+peterjausovec.vscode-docker
+rebornix.ruby
+visualstudioexptteam.vscodeintellicode
+vscodevim.vim
+)
+
+for extension in $VSCODE_EXTENSIONS; do
+  code --install-extension $extension
+done
+
 echo "Done. You'll need to:"
 echo "* Log out and back in to change your shell and desktop environment"
 echo "* Manually copy in SSH keys and config"
