@@ -64,6 +64,10 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 # At the time of writing, docker for cosmic was unavailable, see https://github.com/docker/for-linux/issues/442
 sudo sh -c "echo 'deb [arch=amd64] https://download.docker.com/linux/ubuntu ${LATEST_LTS_RELEASE} stable' > /etc/apt/sources.list.d/docker.list"
 
+# - Stripe
+sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 379CE192D401AB61
+echo "deb https://dl.bintray.com/stripe/stripe-cli-deb stable main" | sudo tee -a /etc/apt/sources.list
+
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
@@ -75,7 +79,7 @@ VSCODE="apt-transport-https"
 PIA_VPN="network-manager-openvpn-gnome"
 sudo apt update --quiet
 sudo apt install --quiet --yes build-essential cloc zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
-  heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2 diodon tree gtk-recordmydesktop\
+  heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2 diodon tree gtk-recordmydesktop stripe\
   password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags code insync docker-ce yarn vlc\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE} ${PIA_VPN}
 
