@@ -68,6 +68,10 @@ sudo sh -c "echo 'deb [arch=amd64] https://download.docker.com/linux/ubuntu ${LA
 sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 379CE192D401AB61
 echo "deb https://dl.bintray.com/stripe/stripe-cli-deb stable main" | sudo tee -a /etc/apt/sources.list
 
+# - gcloud and kubectl
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+
 # Update apt and install packages
 THESILVERSEARCHER="automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev"
 NOKOGIRI="libxml2-dev libxslt1-dev"
@@ -81,6 +85,7 @@ sudo apt update --quiet
 sudo apt install --quiet --yes build-essential cloc zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2 diodon tree gtk-recordmydesktop stripe\
   password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags code insync docker-ce yarn vlc\
+  kubectl google-cloud-sdk\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE} ${PIA_VPN}
 
 # Install docker-compose
