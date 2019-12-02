@@ -57,7 +57,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 # - Insync
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
-echo "deb http://apt.insynchq.com/ubuntu ${RELEASE} non-free contrib" | sudo tee /etc/apt/sources.list.d/insync.list
+echo "deb http://apt.insync.io/ubuntu ${RELEASE} non-free contrib" | sudo tee /etc/apt/sources.list.d/insync.list
 
 # - Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
