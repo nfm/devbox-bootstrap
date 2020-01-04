@@ -85,7 +85,7 @@ sudo apt update --quiet
 sudo apt install --quiet --yes build-essential cloc zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2 diodon tree gtk-recordmydesktop stripe\
   password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags code insync docker-ce yarn vlc pgcli\
-  kubectl google-cloud-sdk\
+  kubectl google-cloud-sdk flameshot\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE} ${PIA_VPN}
 
 # Install docker-compose
