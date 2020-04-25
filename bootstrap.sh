@@ -85,7 +85,7 @@ sudo apt update --quiet
 sudo apt install --quiet --yes build-essential cloc zlib1g-dev libssl-dev libreadline-dev curl git-core vim zsh firefox-trunk\
   heroku-toolbelt redis-server htop memcached google-chrome-beta tmux libjemalloc2 diodon tree gtk-recordmydesktop stripe\
   password-gorilla msttcorefonts imagemagick colordiff libsqlite3-dev exuberant-ctags code insync docker-ce yarn vlc pgcli\
-  kubectl google-cloud-sdk flameshot\
+  kubectl google-cloud-sdk flameshot wmctrl\
   ${THESILVERSEARCHER} ${NOKOGIRI} ${POSTGRESQL} ${DEJA_DUP_S3_STORAGE} ${NEOVIM} ${PHOENIX} ${VSCODE} ${PIA_VPN}
 
 # Install docker-compose
@@ -195,3 +195,4 @@ echo "* Manually copy in GPG keys"
 echo "* Set up backups (http://blog.domenech.org/2013/01/backing-up-ubuntu-using-deja-dup-backup-and-aws-s3.html) (ignore downloads, tmp, .rubies, .gem, .berkshelf, .cache, .npm, .nvm, .vim/bundle, .heroku, possibly others!)"
 echo "* Configure compiz config settings to change the Ubuntu Unity plugin edge stop velocity to not block the mouse from moving between monitors when trying to reveal the launcher with the mouse"
 echo "* Set keyboard shortcut for flameshot (https://github.com/lupoDharkael/flameshot/issues/500)"
+echo "* Set keyboard shortcut to focus Firefox, VSCode and Terminal (eg. custom shortcut Ctrl-Alt-1 for wmctrl -a Firefox)"
