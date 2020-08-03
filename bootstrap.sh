@@ -174,6 +174,7 @@ castwide.solargraph
 eamodio.gitlens
 editorconfig.editorconfig
 esbenp.prettier-vscode
+kaiwood.endwise
 karunamurti.haml
 ms-vscode.vscode-typescript-tslint-plugin
 ms-vsliveshare.vsliveshare
