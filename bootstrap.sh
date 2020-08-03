@@ -173,9 +173,9 @@ VSCODE_EXTENSIONS=(
 castwide.solargraph
 eamodio.gitlens
 editorconfig.editorconfig
-eg2.tslint
 esbenp.prettier-vscode
 karunamurti.haml
+ms-vscode.vscode-typescript-tslint-plugin
 ms-vsliveshare.vsliveshare
 patbenatar.advanced-new-file
 peterjausovec.vscode-docker
