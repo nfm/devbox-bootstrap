@@ -177,6 +177,7 @@ esbenp.prettier-vscode
 kaiwood.endwise
 karunamurti.haml
 ms-vscode.vscode-typescript-tslint-plugin
+ms-vscode-remote.remote-containers
 ms-vsliveshare.vsliveshare
 patbenatar.advanced-new-file
 peterjausovec.vscode-docker
