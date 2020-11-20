@@ -171,6 +171,9 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 sudo bash pia-nm.sh
 
+# Install Heroku plugins
+heroku plugins:install git://github.com/heroku/heroku-pg-extras.git
+
 # Install vscode extensions
 # These don't get defined in a config file anywhere unfortunately
 VSCODE_EXTENSIONS=(
