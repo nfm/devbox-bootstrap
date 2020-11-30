@@ -181,6 +181,7 @@ castwide.solargraph
 eamodio.gitlens
 editorconfig.editorconfig
 esbenp.prettier-vscode
+gitlab.gitlab-workflow
 kaiwood.endwise
 karunamurti.haml
 ms-vscode.vscode-typescript-tslint-plugin
